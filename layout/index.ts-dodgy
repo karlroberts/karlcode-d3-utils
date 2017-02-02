@@ -1,0 +1,26 @@
+import { bestSquareTiles, calcTopLeftXYPos } from '../geometry/geometry';
+
+//  Utility functions for calulating positional style attributes  
+
+
+// calculate the style needed to position a square tiles in an box to maximise space
+export function positionTileStyle(box: Element, numOfPositions: number, index: number) {
+
+  //TODO pre calc this on screen resize and fresh data bump
+  // brute for recalc for now
+  //   var cds = Array.prototype.slice.call($scope.chartDatas); //coerce to Array
+  //   var num = cds.length;
+  var num = numOfPositions;
+  var x = box.clientWidth;
+  var y = window.innerHeight - 50;
+  var bestTileWidth = bestSquareTiles(x, y, num)
+  console.log("<><><><><><><><><<><>< x:=" + x + "   y:" + y);
+
+  var pos = calcTopLeftXYPos(index, bestTileWidth, x, y);
+
+  var ret = { "top": pos.y + "px", "left": pos.x + "px", "width": bestTileWidth + "px", "height": bestTileWidth + "px" };
+
+  console.log("<><><><><><><><><<><>< ret for index " + index + "  " + JSON.stringify(ret, null, 2));
+
+  return "position: absolute; top: " + ret.top + "; left: " + ret.left + "; width: " + ret.width + "; height: " + ret.height;
+}
