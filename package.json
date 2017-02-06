@@ -5,7 +5,7 @@
   "types": "./index.d.ts",
   "description": "necessary shims and geometry functions to help with drawing stuff",
   "scripts": {
-    "foo": "tsc",
+    "tsc": "tsc",
     "tsc:w": "tsc -w"
   },
   "keywords": [],
@@ -33,7 +33,7 @@
     "@types/jasmine": "^2.5.36",
     "@types/selenium-webdriver": "^2.53.33"
   },
-  "repository": "github:/karlroberts/foobarwtf",
+  "repository": "git@bitbucket.org:karl_roberts/karlcode-d3-utils.git",
   "publishConfig": {
       "registry":"https://nexus.aws.avocado.com.au/repository/npm-hosted-s3"
   }
